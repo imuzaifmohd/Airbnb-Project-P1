@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+<!-- this body will be imported in the boilerplate.ejs -->
+<body>
+    <h3>All Listings</h3>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <!-- row-cols-lg-3 means ek row ke andar jitne bhi columns hain -->
+        <!-- large screen sizes pe minimum 3 cards ek line pe dikhenge -->
+
+        <!-- so like this row-cols-md-2 means ki medium screen size -->
+        <!-- pe 2 cards dikhai denge -->
+        <% for (let listing of allListings ){%>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col">
+                    <!-- col class means columns ke basis pe dikehnge -->
+                    <img src=" <%= listing.image %> " class="card-img-top" alt="listing_image" style="height: 20rem">
+                    <div class="card-img-overlay"></div>  <!-- bootstrap card image overlay -->
+                    <div class="card-body">
+                      <p class="card-text">
+                            <b><%= listing.title %></b> <br>
+                            &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                      </p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+    
+    <ul>
+        <% for (let listing of allListings ){%>
+            <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
+        <% } %>
+    </ul>
+</body>
+
+

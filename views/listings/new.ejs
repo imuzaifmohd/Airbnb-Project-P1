@@ -1,0 +1,68 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2"> <!-- col-8 means agar screen 12 parts me divided hai to -->
+                            <!-- zada se zada only 7-8 parts co occupy karega form-->
+
+                            <!--offset-2 makes the form in center-->
+            <br><br>
+            <h3>Create a new listing</h3>
+            <form method="POST" action="/listings" class="needs-validation" novalidate>
+
+                <!-- initially before adding bootstrap where only backend was there -->
+                <!-- there was not any label tag -->
+                <!-- also there wasn't any class="form-control" -->
+
+                <!-- after addding bootstrap here we added label tag and joined the pairs in divs -->
+                <!-- class="form-label" and class="form-control was written from getbootstrap.com" -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input required type="text" name="listing[title]" placeholder="Enter Title" class="form-control">
+                    <div class="valid-feedback">Title Looks good!</div>
+                    <div class="invalid-feedback">Please enter a title</div>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea required type="text" name="listing[description]" placeholder="Enter description" class="form-control"></textarea>
+                    <div class="invalid-feedback">Please enter a short a description</div>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Link</label>
+                    <textarea type="text" name="listing[image]" placeholder="Enter image URL/Link" class="form-control"></textarea>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input required type="text" name="listing[price]" placeholder="Enter price" class="form-control">
+                        <div class="invalid-feedback">Price should be valid</div>
+                    </div>
+                    
+    
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label> 
+                        <input required type="text" name="listing[country]" placeholder="Enter country" class="form-control">
+                        <div class="invalid-feedback">Country name should be valid</div>
+                    </div>
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input required type="text" name="listing[location]" placeholder="Enter Location" class="form-control">
+                    <div class="invalid-feedback">Location should be valid</div>
+                </div>
+                
+                
+                <button class="btn btn-dark add-btn">Add</button>
+                <br><br>
+            </form>
+        </div>      <!--.col-8 div ending-->
+
+    </div>          <!--.row div ending-->
+</body>
